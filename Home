@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarsMillionaire.com - Free Astrology & Numerology Remedies (No Paid Upsells)</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" rel="stylesheet">
+    
+    <!-- Schema.org markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MarsMillionaire.com",
+      "url": "https://marsmillionaire.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://marsmillionaire.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "description": "Free astrology and numerology remedies with no paid upsells. Offering DOB analysis, name correction, numerology calculations, and planetary remedies."
+    }
+    </script>
+
+    <style>
+        :root {
+            --mars-black: #000000;
+            --mars-red: #FF2D20;
+            --mars-gold: #FFD700;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        .mars-bg-black {
+            background-color: var(--mars-black);
+        }
+        
+        .mars-bg-red {
+            background-color: var(--mars-red);
+        }
+        
+        .mars-bg-gold {
+            background-color: var(--mars-gold);
+        }
+        
+        .mars-text-red {
+            color: var(--mars-red);
+        }
+        
+        .mars-text-gold {
+            color: var(--mars-gold);
+        }
+        
+        .tool-card {
+            border-left: 4px solid var(--mars-red);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .remedy-card {
+            border-left: 4px solid var(--mars-gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .remedy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .tool-icon {
+            color: var(--mars-red);
+            font-size: 2rem;
+        }
+        
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--mars-red);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Improved focus styles for accessibility */
+        a:focus, button:focus, input:focus, select:focus, textarea:focus {
+            outline: 2px solid var(--mars-red);
+            outline-offset: 2px;
+        }
+        
+        /* For the PDF export optimization */
+        @media print {
+            .page-break {
+                page-break-before: always;
+            }
+            
+            body {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        .contact-form label,
+        .tool-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .tool-form input,
+        .tool-form select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--mars-red);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e62b1e;
+        }
+
+        .btn:focus {
+            outline: 2px solid var(--mars-gold);
+            outline-offset: 2px;
+        }
+        
+        /* Custom AdSense placeholders - actual AdSense code would replace these in production */
+        .ad-placeholder {
+            background: #f0f0f0;
+            padding: 1rem;
+            text-align: center;
+            margin: 1rem 0;
+            border-radius: 4px;
+            border: 1px dashed #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="mars-bg-black text-white py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-mars tool-icon mars-text-gold mr-3"></i>
+                    <h1 class="text-3xl font-bold">MarsMillionaire.com</h1>
+                </div>
+                <nav aria-label="Main Navigation">
+                    <ul class="flex space-x-6">
+                        <li><a href="#tools" class="text-white hover:text-yellow-300 transition-colors">Free Tools</a></li>
+                        <li><a href="#remedies" class="text-white hover:text-yellow-300 transition-colors">Remedies</a></li>
+                        <li><a href="#blog" class="text-white hover:text-yellow-300 transition-colors">Blog</a></li>
+                        <li><a href="#faq" class="text-white hover:text-yellow-300 transition-colors">FAQ</a></li>
+                        <li><a href="#contact" class="text-white hover:text-yellow-300 transition-colors">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="py-16 mars-bg-black text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">100% Free Astrology & <span class="mars-text-gold">Numerology</span> Solutions</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Discover powerful remedies based on your date of birth and name. No paid upsells, ever.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#tools" class="btn bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg text-lg font-bold transition-colors">
+                    Get Free Analysis <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#remedies" class="btn bg-transparent border-2 border-yellow-300 text-yellow-300 hover:bg-yellow-300 hover:text-black px-8 py-3 rounded-lg text-lg font-bold transition-colors">
+                    View Remedies <i class="fas fa-gem ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main id="main-content" class="py-12 bg-white">
+        <!-- Free Tools Section -->
+        <section id="tools" class="container mx-auto px-4 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Free Real-Time Tools</h2>
+            <p class="text-lg text-center mb-10 max-w-3xl mx-auto">Powerful astrology and numerology tools to analyze your life path, correct your name, and find auspicious numbers - 100% free, forever.</p>
+            
+            <div class="ad-placeholder">
+                <p>Advertisement (Google AdSense)</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                <!-- DOB Analyzer -->
+                <div class="tool-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-calendar-alt tool-icon mr-4"></i>
+                        <h3 class="text-2xl font-semibold">DOB Analyzer</h3>
+                    </div>
+                    <p class="mb-4">Analyze your date of birth to discover your wealth potential, health insights, and obstacles in your path.</p>
+                    <form class="tool-form">
+                        <label for="dob-input">Your Date of Birth</label>
+                        <input type="date" id="dob-input" name="dob" required aria-required="true" class="w-full p-2 border border-gray-300 rounded mb-4">
+                        <button type="submit" class="btn w-full">Analyze Now</button>
+                    </form>
+                </div>
+                
+                <!-- Name Corrector -->
+                <div class="tool-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-signature tool-icon mr-4"></i>
+                        <h3 class="text-2xl font-semibold">Name Corrector</h3>
+                    </div>
+                    <p class="mb-4">Transform your name's cosmic energy by adding or removing letters to attract luck and prosperity.</p>
+                    <form class="tool-form">
+                        <label for="name-input">Your Full Name</label>
+                        <input type="text" id="name-input" name="name" required aria-required="true" placeholder="Enter your full name" class="w-full p-2 border border-gray-300 rounded mb-4">
+                        <label for="name-dob">Your Date of Birth</label>
+                        <input type="date" id="name-dob" name="dob" required aria-required="true" class="w-full p-2 border border-gray-300 rounded mb-4">
+                        <button type="submit" class="btn w-full">Get Lucky Name</button>
+                    </form>
+                </div>
+                
+                <!-- Mobile/Car Number Grader -->
+                <div class="tool-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-phone-alt tool-icon mr-4"></i>
+                        <h3 class="text-2xl font-semibold">Number Grader</h3>
+                    </div>
+                    <p class="mb-4">Check if your mobile or vehicle number is lucky for you using Chaldean and Pythagorean numerology.</p>
+                    <form class="tool-form">
+                        <label for="number-type">Number Type</label>
+                        <select id="number-type" name="number-type" required aria-required="true" class="w-full p-2 border border-gray-300 rounded mb-4">
+                            <option value="mobile">Mobile Number</option>
+                            <option value="car">Vehicle/Car Number</option>
+                        </select>
+                        <label for="number-input">Enter Number</label>
+                        <input type="text" id="number-input" name="number" required aria-required="true" placeholder="Enter number" class="w-full p-2 border border-gray-300 rounded mb-4">
+                        <label for="number-dob">Your Date of Birth</label>
+                        <input type="date" id="number-dob" name="dob" required aria-required="true" class="w-full p-2 border border-gray-300 rounded mb-4">
+                        <button type="submit" class="btn w-full">Grade My Number</button>
+                    </form>
+                </div>
+                
+                <!-- Nazar Dosh Calculator -->
+                <div class="tool-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-eye tool-icon mr-4"></i>
+                        <h3 class="text-2xl font-semibold">Nazar Dosh Calculator</h3>
+                    </div>
+                    <p class="mb-4">Check if you're affected by the evil eye and get instant remedies to remove negative energy.</p>
+                    <form class="tool-form">
+                        <label for="nazar-name">Your Name</label>
+                        <input type="text" id="nazar-name" name="name" required aria-required="true" placeholder="Enter your name" class="w-full p-2 border border-gray-300 rounded mb-4">
+                        <label for="nazar-dob">Your Date of Birth</label>
+                        <input type="date" id="nazar-dob" name="dob" required aria-required="true" class="w-full p-2 border border-gray-300 rounded mb-4">
+                        <label for="nazar-issues">Issues You're Facing</label>
+                        <select id="nazar-issues" name="issues" multiple aria-multiselectable="true" class="w-full p-2 border border-gray-300 rounded mb-4" size="3">
+                            <option value="health">Health Problems</option>
+                            <option value="finance">Financial Issues</option>
+                            <option value="relationship">Relationship Troubles</option>
+                            <option value="career">Career Setbacks</option>
+                            <option value="sleep">Sleep Disturbances</option>
+                        </select>
+                        <button type="submit" class="btn w-full">Check Evil Eye Effects</button>
+                    </form>
+                </div>
+                
+                <!-- Vastu Dosh Finder -->
+                <div class="tool-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-home tool-icon mr-4"></i>
+                        <h3 class="text-2xl font-semibold">Vastu Dosh Finder</h3>
+                    </div>
+                    <p class="mb-4">Discover Vastu defects in your home and get room-specific remedies to improve energy flow.</p>
+                    <form class="tool-form">
+                        <label for="vastu-home-type">Home Type</label>
+                        <select id="vastu-home-type" name="home-type" required aria-required="true" class="w-full p-2 border border-gray-300 rounded mb-4">
+                            <option value="apartment">Apartment/Flat</option>
+                            <option value="house">Independent House</option>
+                            <option value="office">Office Space</option>
+                            <option value="shop">Shop/Commercial</option>
+                        </select>
+                        <label for="vastu-concern">Area of Concern</label>
+                        <select id="vastu-concern" name="concern" required aria-required="true" class="w-full p-2 border border-gray-300 rounded mb-4">
+                            <option value="entrance">Main Entrance</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="bedroom">Bedroom</option>
+                            <option value="bathroom">Bathroom</option>
+                            <option value="living">Living Room</option>
+                            <option value="office-room">Home Office</option>
+                        </select>
+                        <button type="submit" class="btn w-full">Find Vastu Solutions</button>
+                    </form>
+                </div>
+                
+                <!-- Personalized Remedy -->
+                <div class="tool-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user-md tool-icon mr-4"></i>
+                        <h3 class="text-2xl font-semibold">Personalized Remedy</h3>
+                    </div>
+                    <p class="mb-4">Get custom remedies and rituals tailored to your specific life challenges and birth chart.</p>
+                    <form class="tool-form">
+                        <label for="remedy-name">Your Name</label>
+                        <input type="text" id="remedy-name" name="name" required aria-required="true" placeholder="Enter your name" class="w-full p-2 border border-gray-300 rounded mb-4">
+                        <label for="remedy-dob">Your Date of Birth</label>
+                        <input type="date" id="remedy-dob" name="dob" required aria-required="true" class="w-full p-2 border border-gray-300 rounded mb-4">
+                        <label for="remedy-issue">Primary Concern</label>
+                        <select id="remedy-issue" name="concern" required aria-required="true" class="w-full p-2 border border-gray-300 rounded mb-4">
+                            <option value="wealth">Wealth & Prosperity</option>
+                            <option value="career">Career Growth</option>
+                            <option value="love">Love & Relationships</option>
+                            <option value="health">Health & Vitality</option>
+                            <option value="obstacles">Removing Obstacles</option>
+                        </select>
+                        <button type="submit" class="btn w-full">Get My Free Remedy</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Remedy Library Section -->
+        <section id="remedies" class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Free Remedy Library</h2>
+                <p class="text-lg text-center mb-10 max-w-3xl mx-auto">Browse our extensive collection of powerful planetary, numerical, and issue-specific remedies that work.</p>
+                
+                <div class="ad-placeholder mt-8">
+                    <p>Advertisement (Google AdSense)</p>
+                </div>
+                
+                <!-- Remedy Categories Tabs -->
+                <div class="mt-10">
+                    <div class="flex flex-wrap justify-center mb-8 border-b border-gray-300">
+                        <button class="px-6 py-3 text-lg font-medium border-b-2 border-red-500 text-red-500" id="tab-planet" aria-selected="true" role="tab">By Planet</button>
+                        <button class="px-6 py-3 text-lg font-medium" id="tab-number" aria-selected="false" role="tab">By Number</button>
+                        <button class="px-6 py-3 text-lg font-medium" id="tab-issue" aria-selected="false" role="tab">By Issue</button>
+                    </div>
+                    
+                    <!-- By Planet Remedies -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="planet-remedies">
+                        <!-- Mars -->
+                        <div class="remedy-card bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-mars mars-text-red text-3xl mr-4"></i>
+                                <h3 class="text-2xl font-semibold">Mars (Mangal)</h3>
+                            </div>
+                            <p class="mb-4">Mars governs energy, courage, and confidence. Strengthen your Mars to boost career and overcome challenges.</p>
+                            <ul class="mb-6 space-y-2">
+                                <li class="flex items-start"><i class="fas fa-gem text-red-500 mt-1 mr-2"></i> Wear Red Coral (Moonga) set in copper</li>
+                                <li class="flex items-start"><i class="fas fa-pray text-red-500 mt-1 mr-2"></i> Recite Hanuman Chalisa daily</li>
+                                <li class="flex items-start"><i class="fas fa-hand-holding-heart text-red-500 mt-1 mr-2"></i> Donate red lentils on Tuesday</li>
+                            </ul>
+                            <a href="#" class="text-red-600 font-bold flex items-center">
+                                View Complete Mars Remedies <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Rahu -->
+                        <div class="remedy-card bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-cloud-moon mars-text-red text-3xl mr-4"></i>
+                                <h3 class="text-2xl font-semibold">Rahu</h3>
+                            </div>
+                            <p class="mb-4">Rahu influences unexpected changes, illusions, and technological advancements. Balance Rahu to reduce confusion.</p>
+                            <ul class="mb-6 space-y-2">
+                                <li class="flex items-start"><i class="fas fa-gem text-red-500 mt-1 mr-2"></i> Wear Hessonite (Gomed) set in silver</li>
+                                <li class="flex items-start"><i class="fas fa-pray text-red-500 mt-1 mr-2"></i> Chant "Om Ram Rahave Namah" 108 times</li>
+                                <li class="flex items-start"><i class="fas fa-hand-holding-heart text-red-500 mt-1 mr-2"></i> Feed crows on Saturday</li>
+                            </ul>
+                            <a href="#" class="text-red-600 font-bold flex items-center">
+                                View Complete Rahu Remedies <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                        
+                        <!-- Saturn -->
+                        <div class="remedy-card bg-white p-6 rounded-lg shadow-md">
+                            <div class="flex items-center mb-4">
+                                <i class="fab fa-centercode mars-text-red text-3xl mr-4"></i>
+                                <h3 class="text-2xl font-semibold">Saturn (Shani)</h3>
+                            </div>
+                            <p class="mb-4">Saturn rules discipline, responsibility, and delays. Pacify Saturn to overcome obstacles and chronic problems.</p>
+                            <ul class="mb-6 space-y-2">
+                                <li class="flex items-start"><i class="fas fa-gem text-red-500 mt-1 mr-2"></i> Wear Blue Sapphire (Neelam) cautiously</li>
+                                <li class="flex items-start"><i class="fas fa-pray text-red-500 mt-1 mr-2"></i> Recite Shani Chalisa on Saturdays</li>
+                                <li class="flex items-start"><i class="fas fa-hand-holding-heart text-red-500 mt-1 mr-2"></i> Donate black sesame seeds, oil, and iron</li>
+                            </ul>
+                            <a href="#" class="text-red-600 font-bold flex items-center">
+                                View Complete Saturn Remedies <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <a href="#" class="btn bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg inline-flex items-center">
+                        View All Remedies <i class="fas fa-book-open ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Blog/Articles Section -->
+        <section id="blog" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Free Astrology & Numerology Insights</h2>
+                <p class="text-lg text-center mb-10 max-w-3xl mx-auto">Practical guides, downloadable PDFs, and powerful rituals to transform your life - all completely free.</p>
+                
+                <div class="ad-placeholder">
+                    <p>Advertisement (Google AdSense)</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                    <!-- Blog Article 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="p-6">
+                            <span class="inline-block py-1 px-3 rounded-full bg-red-100 text-red-600 text-sm font-medium mb-4">Mars Remedies</span>
+                            <h3 class="text-xl font-bold mb-3">Scorpio's 5-Minute Mars Wealth Ritual (Free PDF)</h3>
+                            <p class="text-gray-600 mb-4">A quick daily ritual specifically designed for Scorpios to harness Mars energy for financial abundance.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="mr-3"><i class="far fa-calendar mr-1"></i> May 2, 2025</span>
+                                <span><i class="far fa-clock mr-1"></i> 5 min read</span>
+                            </div>
+                            <a href="#" class="text-red-600 font-bold flex items-center">
+                                Read Article & Download PDF <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Article 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="p-6">
+                            <span class="inline-block py-1 px-3 rounded-full bg-yellow-100 text-yellow-700 text-sm font-medium mb-4">Numerology</span>
+                            <h3 class="text-xl font-bold mb-3">Why 7 is Your Money Number (Destiny 7 Explained)</h3>
+                            <p class="text-gray-600 mb-4">Discover how number 7 influences your financial decisions and wealth creation patterns.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="mr-3"><i class="far fa-calendar mr-1"></i> April 28, 2025</span>
+                                <span><i class="far fa-clock mr-1"></i> 7 min read</span>
+                            </div>
+                            <a href="#" class="text-red-600 font-bold flex items-center">
+                                Read Article <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Blog Article 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="p-6">
+                            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-600 text-sm font-medium mb-4">Vastu Remedies</span>
+                            <h3 class="text-xl font-bold mb-3">Fix South-West Corner Vastu Without Renovation</h3>
+                            <p class="text-gray-600 mb-4">Simple remedies to correct Vastu defects in your home's south-west corner without costly changes.</p>
+                            <div class="flex items-center text-sm text-gray-500 mb-4">
+                                <span class="mr-3"><i class="far fa-calendar mr-1"></i> April 24, 2025</span>
+                                <span><i class="far fa-clock mr-1"></i> 6 min read</span>
+                            </div>
+                            <a href="#" class="text-red-600 font-bold flex items-center">
+                                Read Article <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <a href="#" class="btn bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg inline-flex items-center">
+                        View All Articles <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section id="faq" class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+                <p class="text-lg text-center mb-10 max-w-3xl mx-auto">Find answers to common questions about our free astrology and numerology remedies.</p>
+                
+                <div class="max-w-3xl mx-auto">
+                    <!-- FAQ Item 1 -->
+                    <div class="mb-6 bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-bold mb-3">Are all remedies on MarsMillionaire.com really 100% free?</h3>
+                        <p>Yes, absolutely! All remedies, tools, and resources on our website are completely free. We are funded by AdSense advertisements only and do not believe in hidden fees or paid upsells. Our mission is to make astrological remedies accessible to everyone.</p>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="mb-6 bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-bold mb-3">How accurate is the DOB Analyzer tool?</h3>
+                        <p>Our DOB Analyzer uses advanced algorithms combining traditional Vedic astrology with Chaldean numerology principles. While no tool can be 100% accurate, we continuously refine our calculations based on thousands of verified results. The analyzer provides insights based on planetary positions at your time of birth and numerical vibrations of your birth date.</p>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="mb-6 bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-bold mb-3">Why should I trust MarsMillionaire.com over paid astrology services?</h3>
+                        <p>Unlike many paid services, we don't provide generic readings. Our tools use well-established astrological and numerological systems. We believe knowledge should be accessible to everyone, not just those who can afford expensive consultations. Our thousands of positive user testimonials speak to the effectiveness of our free remedies.</p>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="mb-6 bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-bold mb-3">How often should I perform the remedies recommended?</h3>
+                        <p>Most remedies should be performed consistently for best results. For example, gemstone remedies require daily wear, mantras should be chanted as specified (often daily), and donation-based remedies should follow the suggested schedule (often weekly). Each remedy includes specific timing instructions for maximum effectiveness.</p>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="mb-6 bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-bold mb-3">Do your name corrections follow Pythagorean or Chaldean numerology?</h3>
+                        <p>Our Name Corrector tool uses a hybrid approach that considers both Pythagorean and Chaldean numerology systems, as each has unique strengths. We analyze your name using both methods, then compare with your birth chart to recommend the optimal correction for your specific life path and destiny numbers.</p>
+                    </div>
+                </div>
+                
+                <div class="ad-placeholder mt-10">
+                    <p>Advertisement (Google AdSense)</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Contact Us</h2>
+                    <p class="text-lg text-center mb-10">Have questions about our free astrology and numerology tools? We're here to help!</p>
+                    
+                    <form class="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="contact-name">Your Name</label>
+                                <input type="text" id="contact-name" name="name" required aria-required="true">
+                            </div>
+                            <div>
+                                <label for="contact-email">Your Email</label>
+                                <input type="email" id="contact-email" name="email" required aria-required="true">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" required aria-required="true">
+                        </div>
+                        <div class="mb-6">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" rows="6" required aria-required="true"></textarea>
+                        </div>
+                        <button type="submit" class="btn bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="mars-bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-mars tool-icon mars-text-gold mr-3"></i>
+                        <h2 class="text-2xl font-bold">MarsMillionaire</h2>
+                    </div>
+                    <p class="mb-4">Free astrology and numerology remedies for everyone. No paid upsells, ever.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Facebook" class="text-white hover:text-yellow-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter" class="text-white hover:text-yellow-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram" class="text-white hover:text-yellow-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube" class="text-white hover:text-yellow-300"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Free Tools</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">DOB Analyzer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Name Corrector</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Number Grader</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Nazar Dosh Calculator</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Vastu Dosh Finder</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Remedies</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Mars Remedies</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Rahu Remedies</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Number 8 Remedies</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Business Loss Solutions</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Health Improvement</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Important Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Disclaimer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-yellow-300">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400">The information provided on MarsMillionaire.com is for educational and entertainment purposes only. These remedies are based on astrological and numerological traditions and should not replace professional advice.</p>
+                <p class="mt-4">© 2025 MarsMillionaire.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Simple JS for accessibility improvements -->
+    <script>
+        // Basic tab functionality for remedies section
+        document.getElementById('tab-planet').addEventListener('click', function() {
+            this.setAttribute('aria-selected', 'true');
+            this.classList.add('border-red-500', 'text-red-500');
+            document.getElementById('tab-number').setAttribute('aria-selected', 'false');
+            document.getElementById('tab-number').classList.remove('border-red-500', 'text-red-500');
+            document.getElementById('tab-issue').setAttribute('aria-selected', 'false');
+            document.getElementById('tab-issue').classList.remove('border-red-500', 'text-red-500');
+            // Show planet remedies, hide others
+        });
+        
+        document.getElementById('tab-number').addEventListener('click', function() {
+            this.setAttribute('aria-selected', 'true');
+            this.classList.add('border-red-500', 'text-red-500');
+            document.getElementById('tab-planet').setAttribute('aria-selected', 'false');
+            document.getElementById('tab-planet').classList.remove('border-red-500', 'text-red-500');
+            document.getElementById('tab-issue').setAttribute('aria-selected', 'false');
+            document.getElementById('tab-issue').classList.remove('border-red-500', 'text-red-500');
+            // Show number remedies, hide others
+        });
+        
+        document.getElementById('tab-issue').addEventListener('click', function() {
+            this.setAttribute('aria-selected', 'true');
+            this.classList.add('border-red-500', 'text-red-500');
+            document.getElementById('tab-planet').setAttribute('aria-selected', 'false');
+            document.getElementById('tab-planet').classList.remove('border-red-500', 'text-red-500');
+            document.getElementById('tab-number').setAttribute('aria-selected', 'false');
+            document.getElementById('tab-number').classList.remove('border-red-500', 'text-red-500');
+            // Show issue remedies, hide others
+        });
+    </script>
+</body>
+</html>
